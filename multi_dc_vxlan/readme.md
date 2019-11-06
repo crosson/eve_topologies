@@ -1,5 +1,7 @@
 # Multi Datacenter VXLan Example #
 
+![Topology](multi_dc_vxlan.jpg?raw=true "Topology")
+
 In this example we use vxlan to extend bridge domains vlan 101 and 102 for a
 single tenant.
 
@@ -10,4 +12,4 @@ interfaces. This is somehow resolved by adding a simple ACL with logging on to
 the inbound, inside, interfaces. I have two ACL's with identical configs but
 names corresponding to their interface. In this way I could see traffic move
 asynchronously through active links successfully. You would not normally need to
-do anything like this. 
+do anything like this.
