@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="nxos ip fabric" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="leaf1a" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="16" uuid="ba0c0413-f9a1-4354-9a51-7b007cdf1408" delay="0" icon="Nexus7K.png" config="0" left="273" top="420">
+        <interface id="0" name="Mgmt0" type="ethernet" network_id="17"/>
+        <interface id="1" name="E1/1" type="ethernet" network_id="1"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="4"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="7"/>
+        <interface id="4" name="E1/4" type="ethernet" network_id="10"/>
+        <interface id="5" name="E1/5" type="ethernet" network_id="11"/>
+        <interface id="6" name="E1/6" type="ethernet" network_id="18"/>
+        <interface id="14" name="E1/14" type="ethernet" network_id="19"/>
+        <interface id="15" name="E1/15" type="ethernet" network_id="12"/>
+      </node>
+      <node id="2" name="leaf1b" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="16" uuid="17c25714-9735-4322-9dfd-1154f8ca2d42" delay="0" icon="Nexus7K.png" config="0" left="429" top="420">
+        <interface id="0" name="Mgmt0" type="ethernet" network_id="17"/>
+        <interface id="1" name="E1/1" type="ethernet" network_id="2"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="5"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="8"/>
+        <interface id="4" name="E1/4" type="ethernet" network_id="10"/>
+        <interface id="5" name="E1/5" type="ethernet" network_id="11"/>
+        <interface id="6" name="E1/6" type="ethernet" network_id="18"/>
+        <interface id="14" name="E1/14" type="ethernet" network_id="20"/>
+        <interface id="15" name="E1/15" type="ethernet" network_id="13"/>
+      </node>
+      <node id="6" name="leaf2" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="16" uuid="27c6dfa0-6cef-4f65-897f-6c78df234b7b" delay="0" icon="Nexus7K.png" config="0" left="594" top="432">
+        <interface id="0" name="Mgmt0" type="ethernet" network_id="17"/>
+        <interface id="1" name="E1/1" type="ethernet" network_id="3"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="6"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="9"/>
+        <interface id="12" name="E1/12" type="ethernet" network_id="21"/>
+        <interface id="13" name="E1/13" type="ethernet" network_id="16"/>
+        <interface id="14" name="E1/14" type="ethernet" network_id="15"/>
+        <interface id="15" name="E1/15" type="ethernet" network_id="14"/>
+      </node>
+      <node id="9" name="dhcp" type="qemu" template="viosl2" image="viosl2-virl" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="2ce3dfe3-45f1-4010-a6a1-af357bc4419f" delay="0" icon="Switch L3.png" config="0" left="744" top="468">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="16"/>
+      </node>
+      <node id="3" name="spine1" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="8" uuid="9618c71b-79b5-45b5-bb84-9fac0eb3b1eb" delay="0" icon="Nexus7K.png" config="0" left="330" top="156">
+        <interface id="0" name="Mgmt0" type="ethernet" network_id="17"/>
+        <interface id="1" name="E1/1" type="ethernet" network_id="1"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="2"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="3"/>
+      </node>
+      <node id="4" name="spine2" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="8" uuid="df145619-375c-47d9-8131-11aa2f9ee321" delay="0" icon="Nexus7K.png" config="0" left="420" top="165">
+        <interface id="0" name="Mgmt0" type="ethernet" network_id="17"/>
+        <interface id="1" name="E1/1" type="ethernet" network_id="4"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="5"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="6"/>
+      </node>
+      <node id="5" name="spine3" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="8" uuid="e8778647-ea2e-4883-bcf5-c42511804c2c" delay="0" icon="Nexus7K.png" config="0" left="519" top="156">
+        <interface id="0" name="Mgmt0" type="ethernet" network_id="17"/>
+        <interface id="1" name="E1/1" type="ethernet" network_id="7"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="8"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="9"/>
+      </node>
+      <node id="7" name="hosta_net1" type="qemu" template="linux" image="linux-ubuntu-srv-16.04.4-webmin" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="2" uuid="641af405-9242-497c-88df-1426d4d9c6e2" firstmac="00:50:00:00:07:00" delay="0" icon="Server.png" config="0" left="207" top="651">
+        <interface id="0" name="e0" type="ethernet" network_id="12"/>
+        <interface id="1" name="e1" type="ethernet" network_id="13"/>
+      </node>
+      <node id="8" name="hostb_net1" type="qemu" template="linux" image="linux-ubuntu-srv-16.04.4-webmin" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="1" uuid="3c0f01ce-2b83-4146-8a9a-9cb4d376d2b1" firstmac="00:50:00:00:08:00" delay="0" icon="Server.png" config="0" left="462" top="672">
+        <interface id="0" name="e0" type="ethernet" network_id="14"/>
+      </node>
+      <node id="10" name="hostb_net2" type="qemu" template="linux" image="linux-ubuntu-srv-16.04.4-webmin" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="1" uuid="b0d71836-23e7-4f44-891c-1c84ee72f2d3" firstmac="00:50:00:00:0a:00" delay="0" icon="Server.png" config="0" left="588" top="681">
+        <interface id="0" name="e0" type="ethernet" network_id="15"/>
+      </node>
+      <node id="11" name="hosta_net2" type="qemu" template="linux" image="linux-ubuntu-srv-16.04.4-webmin" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="2" uuid="5659ed42-3675-4cc5-a17f-0adffb5b246a" firstmac="00:50:00:00:0b:00" delay="0" icon="Server.png" config="0" left="303" top="723">
+        <interface id="0" name="e0" type="ethernet" network_id="19"/>
+        <interface id="1" name="e1" type="ethernet" network_id="20"/>
+      </node>
+      <node id="12" name="egress_router" type="qemu" template="viosl2" image="viosl2-virl" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="35953cc4-1fa2-41be-81be-06afa286b04f" delay="0" icon="Switch L3.png" config="0" left="1044" top="690">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="21"/>
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="17"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="10" type="bridge" name="Net-leaf1aiface_4" left="333" top="460" visibility="0"/>
+      <network id="11" type="bridge" name="Net-leaf1aiface_5" left="333" top="460" visibility="0"/>
+      <network id="16" type="bridge" name="Net-leaf2iface_13" left="678" top="463" visibility="0"/>
+      <network id="17" type="pnet0" name="Net" left="828" top="288" visibility="1"/>
+      <network id="1" type="bridge" name="Net-spine1iface_1" left="258" top="229" visibility="0"/>
+      <network id="2" type="bridge" name="Net-spine1iface_2" left="258" top="229" visibility="0"/>
+      <network id="3" type="bridge" name="Net-spine1iface_3" left="258" top="229" visibility="0"/>
+      <network id="4" type="bridge" name="Net-spine2iface_1" left="456" top="163" visibility="0"/>
+      <network id="5" type="bridge" name="Net-spine2iface_2" left="456" top="163" visibility="0"/>
+      <network id="6" type="bridge" name="Net-spine2iface_3" left="456" top="163" visibility="0"/>
+      <network id="7" type="bridge" name="Net-spine3iface_1" left="642" top="178" visibility="0"/>
+      <network id="8" type="bridge" name="Net-spine3iface_2" left="642" top="178" visibility="0"/>
+      <network id="9" type="bridge" name="Net-spine3iface_3" left="642" top="178" visibility="0"/>
+      <network id="18" type="bridge" name="Net-leaf1aiface_6" left="333" top="460" visibility="0"/>
+      <network id="12" type="bridge" name="Net-Linuxiface_0" left="267" top="691" visibility="0"/>
+      <network id="13" type="bridge" name="Net-Linuxiface_1" left="267" top="691" visibility="0"/>
+      <network id="14" type="bridge" name="Net-Linux8iface_0" left="522" top="715" visibility="0"/>
+      <network id="15" type="bridge" name="Net-Linux10iface_0" left="582" top="715" visibility="0"/>
+      <network id="19" type="bridge" name="Net-Linux11iface_0" left="357" top="751" visibility="0"/>
+      <network id="20" type="bridge" name="Net-Linux11iface_1" left="357" top="751" visibility="0"/>
+      <network id="21" type="bridge" name="Net-egress_routeriface_0" left="852" top="775" visibility="0"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="circle1" type="circle">
+        <data>PGRpdiBpZD0iY3VzdG9tU2hhcGUxIiBjbGFzcz0iY3VzdG9tU2hhcGUgY29udGV4dC1tZW51IHVpLXJlc2l6YWJsZSBqdGstZHJhZ2dhYmxlIGRyYWdzdG9wcGVkIiBkYXRhLXBhdGg9IjEiIHN0eWxlPSJkaXNwbGF5OiBpbmxpbmU7IHotaW5kZXg6IDk5OTsgcG9zaXRpb246IGFic29sdXRlOyBsZWZ0OiAyMjhweDsgdG9wOiA0MjZweDsgd2lkdGg6IDI5M3B4OyBoZWlnaHQ6IDYxLjMyMjlweDsiIHdpZHRoPSIxMjBweCIgaGVpZ2h0PSIxMjBweCIgbmFtZT0iY2lyY2xlMSI+PHN2ZyB3aWR0aD0iMjkzIiBoZWlnaHQ9IjYxLjMyMjkiPjxlbGxpcHNlIGN4PSIxNDYuNSIgY3k9IjMwLjY2MTQ1IiByeD0iMTQ0IiByeT0iMjguMTYxNDUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyLjUiIGZpbGw9IiMwMGZmZmYiPjwvZWxsaXBzZT5Tb3JyeSwgeW91ciBicm93c2VyIGRvZXMgbm90IHN1cHBvcnQgaW5saW5lIFNWRy48L3N2Zz48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1lIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48L2Rpdj4=</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>
