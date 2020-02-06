@@ -1,4 +1,4 @@
-# Multi Datacenter VXLan Example #
+# Basic L2 VPC Design #
 
 ![Topology](multi_dc_vxlan.jpg?raw=true "Topology")
 
