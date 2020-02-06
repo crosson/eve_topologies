@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="basic_vpc_l2" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="3850_stack" type="qemu" template="viosl2" image="viosl2-virl" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="8" uuid="f86ef991-6258-493c-9550-72fb163ea333" delay="0" icon="Switch L3.png" config="0" left="576" top="477">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="5"/>
+        <interface id="1" name="Gi0/1" type="ethernet" network_id="6"/>
+      </node>
+      <node id="2" name="HP_Server_A" type="qemu" template="linux" image="linux-ubuntu-srv-16.04.4-webmin" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="2" uuid="702024a6-20e2-43f5-94b6-d5eba19b1e5b" firstmac="00:50:00:00:02:00" delay="0" icon="Server.png" config="0" left="432" top="87">
+        <interface id="0" name="e0" type="ethernet" network_id="7"/>
+        <interface id="1" name="e1" type="ethernet" network_id="8"/>
+      </node>
+      <node id="3" name="HP_Server_B" type="qemu" template="linux" image="linux-ubuntu-srv-16.04.4-webmin" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="2" uuid="591bc1d5-3feb-41ff-b11a-688ff3502d6a" firstmac="00:50:00:00:03:00" delay="0" icon="Server.png" config="0" left="687" top="69">
+        <interface id="0" name="e0" type="ethernet" network_id="9"/>
+        <interface id="1" name="e1" type="ethernet" network_id="10"/>
+      </node>
+      <node id="4" name="heada" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="16" uuid="9929de67-3483-4619-8611-3de8f002a837" delay="0" icon="Nexus7K.png" config="0" left="543" top="318">
+        <interface id="1" name="E1/1" type="ethernet" network_id="2"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="3"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="4"/>
+        <interface id="13" name="E1/13" type="ethernet" network_id="9"/>
+        <interface id="14" name="E1/14" type="ethernet" network_id="7"/>
+        <interface id="15" name="E1/15" type="ethernet" network_id="6"/>
+      </node>
+      <node id="5" name="headb" type="qemu" template="nxosv9k" image="nxosv9k-9.2.1" console="telnet" cpu="2" cpulimit="0" ram="8192" ethernet="16" uuid="e8ed7de1-04ac-4a3a-a7de-25968ebe41c3" delay="0" icon="Nexus7K.png" config="0" left="639" top="318">
+        <interface id="1" name="E1/1" type="ethernet" network_id="2"/>
+        <interface id="2" name="E1/2" type="ethernet" network_id="3"/>
+        <interface id="3" name="E1/3" type="ethernet" network_id="4"/>
+        <interface id="13" name="E1/13" type="ethernet" network_id="10"/>
+        <interface id="14" name="E1/14" type="ethernet" network_id="8"/>
+        <interface id="15" name="E1/15" type="ethernet" network_id="5"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="2" type="bridge" name="Net-headaiface_1" left="603" top="358" visibility="0"/>
+      <network id="3" type="bridge" name="Net-headaiface_2" left="603" top="358" visibility="0"/>
+      <network id="4" type="bridge" name="Net-headbiface_3" left="699" top="358" visibility="0"/>
+      <network id="5" type="bridge" name="Net-headbiface_15" left="699" top="358" visibility="0"/>
+      <network id="6" type="bridge" name="Net-headaiface_15" left="603" top="358" visibility="0"/>
+      <network id="7" type="bridge" name="Net-HP_Server_Aiface_0" left="492" top="127" visibility="0"/>
+      <network id="8" type="bridge" name="Net-HP_Server_Aiface_1" left="492" top="127" visibility="0"/>
+      <network id="9" type="bridge" name="Net-HP_Server_Biface_0" left="645" top="151" visibility="0"/>
+      <network id="10" type="bridge" name="Net-HP_Server_Biface_1" left="645" top="151" visibility="0"/>
+    </networks>
+  </topology>
+</lab>
