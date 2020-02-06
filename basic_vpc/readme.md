@@ -1,6 +1,6 @@
 # Basic L2 VPC Design #
 
-![Topology](multi_dc_vxlan.jpg?raw=true "Topology")
+![Topology](basic_vpc_topology.jpg?raw=true "Topology")
 
 In this example we use vxlan to extend bridge domains vlan 101 and 102 for a
 single tenant.
