@@ -2,8 +2,7 @@
 
 ![Topology](basic_vpc_topology.jpg?raw=true "Topology")
 
-In this example we use vxlan to extend bridge domains vlan 101 and 102 for a
-single tenant.
+Basic L2 vpc configuration with adjacent L3 IOS device.
 
 #### Caveats and Notes ####
 
